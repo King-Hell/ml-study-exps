@@ -1,0 +1,9 @@
+load('train-01-images');
+tic;
+[omega,b,alpha]=train(x,y,0,1);
+toc;
+load('test-01-images');
+yy=x*omega+b;
+yy(yy>0)=1;
+yy(yy<0)=-1;
+find(yy-y~=0)

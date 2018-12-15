@@ -7,4 +7,5 @@
 ## 2. [Logistic Regression and Newton's Method(逻辑回归和牛顿法)](https://github.com/King-Hell/ml-study-exps/tree/master/Exp2)
 ## 3. [Regularization(正则化)](https://github.com/King-Hell/ml-study-exps/tree/master/Exp3)
 ## 4. [Naive Bayes(朴素贝叶斯)](https://github.com/King-Hell/ml-study-exps/tree/master/Exp4)
-## 5. [SVM(支持向量机)](https://github.com/King-Hell/ml-study-exps/tree/master/Exp5)
+## 5. [SVM(支持向量机)](https://github.com/King-Hell/ml-study-exps/tree/master/Exp5)  
+## 6. [K-Means(聚类)](https://github.com/King-Hell/ml-study-exps/tree/master/Exp6)  

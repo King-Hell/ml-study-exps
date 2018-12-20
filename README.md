@@ -9,3 +9,4 @@
 ## 4. [Naive Bayes(朴素贝叶斯)](https://github.com/King-Hell/ml-study-exps/tree/master/Exp4)
 ## 5. [SVM(支持向量机)](https://github.com/King-Hell/ml-study-exps/tree/master/Exp5)  
 ## 6. [K-Means(聚类)](https://github.com/King-Hell/ml-study-exps/tree/master/Exp6)  
+## 7. [PCA(主成分分析)](https://github.com/King-Hell/ml-study-exps/tree/master/Exp7)  

@@ -30,8 +30,8 @@
 %   image(grid1);
 %   hold on;
 % end
-function strimage(x,n)
-% load('train-01-images');
+function strimage(n)
+load('test-01-images');
 grid = x(n,:);
 grid = reshape(grid,28,28);
 grid = fliplr(diag(ones(28,1)))*grid;

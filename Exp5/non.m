@@ -23,7 +23,7 @@ xplot=linspace(min(x(:,1)),max(x(:,1)),100);
 yplot=linspace(min(x(:,2)),max(x(:,2)),100);
 [X,Y]=meshgrid(xplot,yplot);
 vals=zeros(size(X));
-S=find(alpha>0.1);
+S=find(alpha>0);
 for j=1:size(vals,1)
     for k=1:size(vals,2)
         yy=0;
@@ -47,6 +47,7 @@ for j=1:size(y,1)
     for i=S'
         yy=yy+alpha(i)*y(i)*exp(-gamma*(norm(x(i,:)-x(j,:))).^2);
     end
+    yy=yy+b;
     if yy>0
         vals(j)=1;
     elseif yy<0

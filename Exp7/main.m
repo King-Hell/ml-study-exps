@@ -1,16 +1,18 @@
 sampleMount=40;%分类数
 imageMount=10;%每个分类的样本数
 n=112*92;%特征数
+%读入数据
+load('data.mat');
+% exp_y=zeros(100,1);
+% for k=1:100
+%     xk=pca(x,k);
+%     exp_y(k)=exp(xk,y);
+%     disp(['第',num2str(k),'次迭代完成']);
+% end
+% plot(1:100,exp_y);
 
-y=zeros(sampleMount*imageMount,1);
-x=zeros(sampleMount*imageMount,n);
-for i=1:sampleMount
-    for j=1:imageMount
-        x((i-1)*10+j,:)=double(reshape(imread(['orl_faces/s',num2str(i),'/',num2str(j),'.pgm']),1,n));
-        y((i-1)*10+j,1)=i;
-    end
-end
-x=pca(x,6);
+% function [acc]=exp(x,y)
+x=pca(x,10);
 train_y=zeros(size(y));
 train_x=zeros(size(x));
 test_y=zeros(size(y));
@@ -40,8 +42,14 @@ train_x=train_x(1:train_it,:);
 test_y=test_y(1:test_it,1);
 test_x=test_x(1:test_it,:);
 tic
-model=svmtrain(train_y,train_x,'-t 0');
+svms=train_mul(train_x,train_y);
 toc;
-predict_y=svmpredict(test_y,test_x,model);
-err=find(predict_y-test_y~=0);
+[acc,errs]=test_mul(test_x,test_y,svms);
+disp(['Acc=',num2str(acc)]);
+% [~,acc,~]=svmpredict(test_y,test_x,model);
+% acc=acc(1);
+%err=find(predict_y-test_y~=0);
+% end
+
+
 %imshow(uint8(reshape(test_x(1,:),112,92)));
